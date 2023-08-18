@@ -16,18 +16,28 @@ function clickHandlerProducer(inputId1, inputId2, whereToShowId, formulaConstant
         const inputField = document.getElementById(inputId);
         const inputFieldValueString = inputField.value;
         const inputFieldValueNum = parseFloat(inputFieldValueString);
+        /*** Validation of the inputs ***/
+        if (inputFieldValueNum < 0 || isNaN(inputFieldValueNum)) { 
+            alert("Invalid Input");
+            return;
+        }
+
         return inputFieldValueNum;
     }
-    
+
     function setAreaValueToTextElement(textElementId, value) {
         const textElement = document.getElementById(textElementId);
         const fixedDecimalValue = value.toFixed(2);
         textElement.innerText = fixedDecimalValue;
     }
 
-    return function() {
+    return function () {
         const x = getNumFromInpField(inputId1);
         const y = getNumFromInpField(inputId2);
+        /*** Validation of the inputs ***/
+        if(!x || !y)  {
+            return;
+        }
         const area = formulaConstant * x * y;
         setAreaValueToTextElement(whereToShowId, area);
     }
@@ -35,7 +45,7 @@ function clickHandlerProducer(inputId1, inputId2, whereToShowId, formulaConstant
 
 /***************************************************************************/
 
-let calculateTriangleArea = clickHandlerProducer("baseTriangle", "heightTriangle","triangleAreaShow", 0.5);
+let calculateTriangleArea = clickHandlerProducer("baseTriangle", "heightTriangle", "triangleAreaShow", 0.5);
 let calculateReatangleArea = clickHandlerProducer("rectangleWidth", "rectangleLength", "rectangleAreaShow", 1);
 let calculateParallelogramArea = clickHandlerProducer("parallelogramBase", "parallelogramHeight", "prallelogramAreaShow", 1);
 let calculateRhombusArea = clickHandlerProducer("rhombusDiagonalOne", "rhombusDiagonalTwo", "rhombusAreaShow", 0.5);
