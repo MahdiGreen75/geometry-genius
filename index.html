@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometry Genius</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+
+    </header>
+    <main>
+        <!-- container -->
+        <div class="flex flex-col lg:flex-row">
+            <!-- shape container -->
+            <div class="flex-1 flex flex-col justify-center items-center md:flex-row gap-6 mt-5">
+                <!-- first card -->
+                <div class="flex flex-col justify-center items-center gap-2 p-5 border border-gray-200 rounded w-48 ">
+                    <img src="images/triangle.png" alt="" class="w-3/4">
+                    <h3 class="font-bold text-xl mt-4">Triangle</h3>
+                    <p class="text-xs font-light"> Area (A) = 0.5 x b x h</p>
+                    <div class="text-xs flex flex-row justify-center mb-4">
+                        <span class="flex justify-end mr-2">
+                            <input type="text" name="" id="baseTriangle" placeholder="b" class="w-1/2 rounded px-1 text-xs bg-gray-200 mr-1">cm
+                        </span>
+                        <span>
+                            <input type="text" name="" id="heightTriangle" placeholder="h" class="w-1/2 rounded px-1 text-xs  bg-gray-200 mr-1">cm
+                        </span>
+                    </div>
+                    <p class="text-xs">Area: <span id="triangleAreaShow" class="ml-1">0</span>cm<sup>2</sup></p>
+                    <input onclick="calculateTriangleArea()" type="button" value="Calculate"
+                        class="text-white w-[75%] font-bold bg-sky-500 hover:bg-sky-600 px-4 py-1 text-xs rounded">
+                </div>
+                <!-- second card -->
+                <div class="flex flex-col justify-center items-center gap-2 p-5 border border-gray-200 rounded w-48">
+                    <img src="images/rectangle.png" alt="" class="w-3/4">
+                    <h3 class="font-bold text-xl mt-4">Rectangle</h3>
+                    <p class="text-xs font-light"> Area (A) = w x l</p>
+                    <div class="text-xs flex flex-row justify-center mb-4">
+                        <span class="flex justify-end mr-2">
+                            <input type="text" name="" id="rectangleWidth" placeholder="w" class="w-1/2 rounded px-1 text-xs bg-gray-200 mr-1">cm
+                        </span>
+                        <span>
+                            <input type="text" name="" id="rectangleLength" placeholder="l" class="w-1/2 rounded px-1 text-xs  bg-gray-200 mr-1">cm
+                        </span>
+                    </div>
+                    <p class="text-xs">Area: <span id="rectangleAreaShow" class="ml-1">0</span>cm<sup>2</sup></p>
+                    <input onclick="calculateReatangleArea()" type="button" value="Calculate"
+                        class="text-white w-[75%] font-bold bg-sky-500 hover:bg-sky-600 px-4 py-1 text-xs rounded">
+                </div>
+                <!-- third card -->
+                <div class="flex flex-col justify-center items-center gap-2 p-5 border border-gray-200 rounded w-48">
+                    <img src="images/parallelogram.png" alt="" class="w-3/4">
+                    <h3 class="font-bold text-xl mt-4">Parallelogram</h3>
+                    <p class="text-xs font-light"> Area (A) = b x h</p>
+                    <div class="text-xs flex flex-row justify-center mb-4">
+                        <span class="flex justify-end mr-2">
+                            <input type="text" name="" id="parallelogramBase" placeholder="b" class="w-1/2 rounded px-1 text-xs bg-gray-200 mr-1">cm
+                        </span>
+                        <span>
+                            <input type="text" name="" id="parallelogramHeight" placeholder="h" class="w-1/2 rounded px-1 text-xs  bg-gray-200 mr-1">cm
+                        </span>
+                    </div>
+                    <p class="text-xs">Area: <span id="prallelogramAreaShow" class="ml-1">0</span>cm<sup>2</sup></p>
+                    <input onclick="calculateParallelogramArea()" type="button" value="Calculate"
+                        class="text-white w-[75%] font-bold bg-sky-500 hover:bg-sky-600 px-4 py-1 text-xs rounded">
+                </div>
+            </div>
+            <!-- area calculator -->
+            <div class="w-[400px]">
+                <div class="text-4xl"> <u>Area Calculation</u></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="scripts/area-calculator.js"></script>
+</body>
+
+</html>
